@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Medio año desde q construimos un futuro 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap');
+:root{--pink:#f5b6cb;--deep:#8b3c5d;--paper:#fffafc;--ink:#593044}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:
+radial-gradient(circle at 20% 10%,#fff 0 8%,transparent 25%),
+linear-gradient(135deg,#fbdce8,#fff4f8 48%,#f7c9db);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#8b3c5d 1px,transparent 1px);background-size:24px 24px}
+h1,h2,.script{font-family:'Cormorant Garamond',serif}
+h1{font-size:clamp(35px,7vw,68px);line-height:.95;margin:0;color:#7e3152;font-weight:700}
+header{text-align:center;padding:55px 20px 20px;position:relative;z-index:2}
+header p{font-family:'Cormorant Garamond',serif;font-size:23px;margin:15px auto;color:#91506b}
+.container{width:min(1050px,92%);margin:auto;position:relative;z-index:2}
+.envelope-stage{height:590px;display:grid;place-items:center}
+.envelope{width:min(680px,94vw);height:410px;position:relative;perspective:1400px}
+.env-back{position:absolute;inset:65px 0 0;background:linear-gradient(145deg,#ef9fba,#f5b6cb);border-radius:18px;box-shadow:0 30px 60px #7d315030}
+.env-front{position:absolute;inset:65px 0 0;background:#efa4bd;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);z-index:4;border-radius:18px;pointer-events:none}
+.flap{position:absolute;top:65px;left:0;width:100%;height:205px;background:linear-gradient(145deg,#f7b6cc,#e993b1);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1s cubic-bezier(.2,.75,.2,1);z-index:6;filter:drop-shadow(0 5px 4px #7b2d4c18)}
+.letter{position:absolute;left:5%;width:90%;height:365px;top:92px;background:var(--paper);border-radius:12px;z-index:3;box-shadow:0 8px 28px #6530441f;transition:transform 1s cubic-bezier(.2,.75,.2,1);overflow:hidden}
+.letter-scroll{height:100%;overflow:auto;padding:30px 30px 34px}
+.envelope.open .flap{transform:rotateX(180deg);z-index:2}
+.envelope.open .letter{transform:translateY(-250px);z-index:8}
+.seal{position:absolute;z-index:10;left:50%;bottom:22px;transform:translateX(-50%);width:76px;height:76px;border:0;border-radius:50%;cursor:pointer;color:#ffe9f1;background:radial-gradient(circle at 35% 30%,#c85278,#852b4d 75%);box-shadow:0 8px 18px #5d243945;font-size:31px}
+.envelope.open .seal{opacity:0;pointer-events:none;transform:translateX(-50%) scale(.65)}
+.recipient{text-align:center;font:700 31px 'Cormorant Garamond',serif;color:#8b3c5d;margin-bottom:18px}
+.message{font:600 20px/1.5 'Cormorant Garamond',serif}.message em{display:block;text-align:center;font-size:22px}.message strong{color:#8b3c5d}
+.signature{text-align:right;margin-top:20px;font:italic 24px 'Cormorant Garamond',serif;color:#8b3c5d}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:25px 0 50px}
+.card{background:#ffffffb8;border:1px solid #e5abc1;border-radius:22px;padding:22px;box-shadow:0 12px 35px #7d315014;backdrop-filter:blur(8px)}
+.card h2{font-size:30px;color:#813452;margin:0 0 12px}
+.timer{font-family:'DM Sans',sans-serif;font-size:clamp(20px,4vw,31px);font-weight:600;text-align:center;letter-spacing:.5px;color:#7f3452;padding:13px 4px}
+button,.select{border:0;border-radius:999px;background:#9e3b60;color:#fff;padding:12px 18px;font-size:16px;cursor:pointer}
+.secret{min-height:62px;margin-top:15px;font:italic 22px/1.35 'Cormorant Garamond',serif;color:#7f3452}
+.music{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery img{width:100%;height:125px;object-fit:cover;border-radius:14px;border:4px solid #fff}
+.gallery img.featured{grid-column:span 2;grid-row:span 2;height:260px}
+.gallery .empty{grid-column:1/-1;text-align:center;padding:40px 10px;border:2px dashed #d99ab3;border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:21px}
+.map{height:310px;border-radius:18px;position:relative;overflow:hidden;background:
+linear-gradient(25deg,transparent 45%,#ffffff80 46% 47%,transparent 48%),
+linear-gradient(145deg,#dce8d8,#cfe0cf 48%,#e9e1c9);border:1px solid #d1b2bd}
+.map:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(75deg,transparent 0 42px,#ffffff55 43px 45px),repeating-linear-gradient(160deg,transparent 0 60px,#ffffff55 61px 63px)}
+.map-label{position:absolute;background:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 2px 9px #5553;font-size:12px;color:#555}
+.pin{position:absolute;text-decoration:none;color:#7d294b;z-index:3}.pin i{display:block;background:#a53c62;color:#fff;width:29px;height:29px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 8px #5d243955}.pin span{position:absolute;left:20px;top:0;background:#fff;padding:7px 9px;border-radius:9px;white-space:nowrap;box-shadow:0 2px 9px #5553;font-size:13px}.sucre{left:27%;top:53%}.corrientes{left:65%;top:65%}.route{position:absolute;left:30%;top:59%;width:38%;border-top:2px dashed #a53c62;transform:rotate(13deg)}
+.flower-frame{padding:18px;border:8px solid #efb1c7;border-radius:20px;position:relative}.flower-frame:before,.flower-frame:after{content:"🌸 🌿 🌷 🌿 🌸";position:absolute;left:12px;right:12px;text-align:center;font-size:20px;letter-spacing:5px}.flower-frame:before{top:-21px}.flower-frame:after{bottom:-21px}
+.wax{display:flex;gap:8px;flex-wrap:wrap}.wax button{background:#8d3554}
+.falling{position:fixed;top:-40px;z-index:1;pointer-events:none;animation:fall linear infinite;opacity:.55}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.note{text-align:center;font-size:13px;color:#98657a}
+@media(max-width:700px){
+ header{padding-top:35px}.envelope-stage{height:500px}.envelope{height:320px}.env-back,.env-front{inset:45px 0 0}.flap{top:45px;height:150px}.letter{top:65px;height:300px}.envelope.open .letter{transform:translateY(-175px)}.letter-scroll{padding:22px 19px}.recipient{font-size:26px}.message{font-size:18px}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.gallery img.featured{grid-column:span 2;height:230px}
+}
+</style>
+</head>
+<body>
+<script>
+for(let i=0;i<25;i++){let x=document.createElement('div');x.className='falling';x.textContent=['♡','♥','✦','🌸'][i%4];x.style.left=Math.random()*100+'%';x.style.animationDuration=7+Math.random()*8+'s';x.style.animationDelay=-Math.random()*10+'s';x.style.fontSize=14+Math.random()*20+'px';document.body.appendChild(x)}
+</script>
+
+<header>
+<h1>Medio año desde q construimos un futuro</h1>
+<p>Para mi lunita hermosa 💗</p>
+</header>
+
+<main class="container">
+<section class="envelope-stage">
+<div class="envelope" id="envelope">
+<div class="env-back"></div>
+<div class="letter">
+<div class="letter-scroll">
+<div class="recipient">Para mi lunita hermosa 💗</div>
+<div class="message">
+no sabes la emoción q siento al escribir y hacer todo esto, amor mio. Ya son seis meses contigo princesita, seis meses llenos de amor, riéndonos de cosas q solo nosotras entendemos, contándonos cada cosa y siendo nosotras. Aun recuerdo los primeros dias q empezamos a hablar y me da mucha risa ya q ni la "sodapop" ni la "golden" podrían imaginar cuanto nos llegamos a amar.<br><br>
+Desde q te conozco eres el primer pensamiento q tengo al despertar y tambien el último al dormirme, por q aunque por el momento solo podemos amarnos a través de una pantalla se q lo q sentimos va mas allá de todo, lo q formamos en estos seis meses son el amor mar puro y sincero, donde ambas mejoramos y demostramos q podemos enfrentar cualquier problema q tengamos en la relación para no perdernos y seguir construyendo un nosotros. Se q pasaron muchas cosas, muchas cosas q nos alejaron y se q son por culpa mia, y perdoname por todo, por no ser lo suficientemente buena para ti, por no estar en los momentos q mas los necesitas, perdoname por todos los errores q tuve, y se q con un perdon no se solucionan las cosas, ya q con palabras no se demuestran las cosas sino con acciones y te las voy a demostrar, por q yo te amo con todo mi corazón mi amor, y siempre lo hare.<br><br>
+<strong>Felices seis meses, amor mío. 🤍</strong><br><br>
+<em>"Eres mi mas dulce melodía, mi sueño, mi poesía. Eres la risa en mi rutina, mi mejor historia y mi alegría."</em>
+</div>
+<div class="signature">Con todo el amor de fernandaa</div>
+</div>
+</div>
+<div class="flap"></div>
+<button class="seal" id="seal" aria-label="Abrir carta">♥</button>
+</div>
+</section>
+
+<section class="grid">
+<div class="card">
+<h2>⏳ Nuestro tiempo</h2>
+<div class="timer" id="timer">000 días · 00 h · 00 min · 00 s</div>
+<div class="note">Desde el 30 de marzo de 2026</div>
+</div>
+
+<div class="card">
+<h2>🎵 Nuestra canción</h2>
+<div class="music">
+<button id="playMusic">▶ Empezar canción desde 0:40</button>
+<button id="stopMusic" style="display:none">⏸ Pausar</button>
+</div>
+<div id="player"></div>
+<div class="note">La gloria eres tú · empieza desde 0:40</div>
+</div>
+
+<div class="card">
+<h2>💌 Poema secreto</h2>
+<button id="reveal">Revelar mi secreto ✨</button>
+<div class="secret" id="secret">Hay algo que quiero que leas cuando estés lista...</div>
+</div>
+
+<div class="card">
+<h2>📸 Nuestros recuerdos</h2>
+<div class="flower-frame"><div class="gallery" id="gallery"><div class="empty">Aquí van nuestras fotos más preciadas ♡<br><small>Selecciona tus fotos abajo para verlas en esta tarjeta.</small></div></div></div>
+</div>
+
+<div class="card">
+<h2>📍 Lugares que nos unen</h2>
+<div class="map">
+<div class="map-label" style="left:10px;top:10px">Google Maps · recuerdos 💗</div>
+<a class="pin sucre" href="https://www.google.com/maps/search/?api=1&query=Sucre%2C%20Bolivia" target="_blank"><i></i><span>Sucre, Bolivia</span></a>
+<a class="pin corrientes" href="https://www.google.com/maps/search/?api=1&query=Corrientes%2C%20Argentina" target="_blank"><i></i><span>Corrientes, Argentina</span></a>
+<div class="route"></div>
+</div>
+<p class="note">Toca cada recuerdo para abrirlo en Google Maps.</p>
+</div>
+
+<div class="card">
+<h2>💗 Sello de cera</h2>
+<div class="wax">
+<button data-wax="♥">♥</button><button data-wax="∞">∞</button><button data-wax="✦">✦</button><button data-wax="❦">❦</button>
+</div>
+<p class="note">Elige tu sello favorito y quedará en el sobre.</p>
+</div>
+</section>
+</main>
+
+<script>
+const envelope=document.getElementById('envelope');
+document.getElementById('seal').addEventListener('click',e=>{e.stopPropagation();envelope.classList.add('open')});
+envelope.addEventListener('click',e=>{if(!e.target.closest('.letter')) envelope.classList.add('open')});
+
+const start=new Date('2026-03-30T00:00:00');
+function timer(){
+ let t=Math.max(0,Math.floor((Date.now()-start)/1000));
+ const d=Math.floor(t/86400);t%=86400;
+ const h=Math.floor(t/3600);t%=3600;
+ const m=Math.floor(t/60),s=t%60;
+ document.getElementById('timer').textContent=`${String(d).padStart(3,'0')} días · ${String(h).padStart(2,'0')} h · ${String(m).padStart(2,'0')} min · ${String(s).padStart(2,'0')} s`;
+}
+timer();setInterval(timer,1000);
+
+document.getElementById('reveal').onclick=()=>{
+ document.getElementById('secret').textContent='Y simplemente puedo decir q eres lo mas bonito q he visto en toda mi vida:333';
+ document.getElementById('reveal').textContent='💗 Ya puedes leerlo';
+};
+
+document.getElementById('stopMusic').style.display='none';document.getElementById('playMusic').style.display='inline-block'}};
+
+document.querySelectorAll('[data-wax]').forEach(b=>b.onclick=()=>{
+ document.getElementById('seal').textContent=b.dataset.wax;
+});
+</script>
+</body>
+</html>
