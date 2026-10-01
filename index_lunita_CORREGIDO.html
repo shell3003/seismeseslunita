@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medio año desde q construimos un futuro 💗</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:#573044;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffdce9,#fff7fa,#f7c8da);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#9c4a69 1px,transparent 1px);background-size:25px 25px}
+h1,h2,.letter{font-family:Georgia,"Times New Roman",serif}
+header{text-align:center;padding:45px 16px 20px;position:relative;z-index:2}
+h1{font-size:clamp(34px,7vw,62px);line-height:.98;color:#7f3454;margin:0}
+header p{font:23px Georgia,serif;color:#92506b}
+.wrap{width:min(1050px,92%);margin:auto;position:relative;z-index:2}
+.fall{position:fixed;top:-35px;z-index:1;pointer-events:none;animation:fall linear infinite;opacity:.55}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+
+/* SOBRE */
+.stage{height:590px;display:grid;place-items:center}
+.envelope{width:min(680px,94vw);height:410px;position:relative;perspective:1200px}
+.back{position:absolute;left:0;right:0;top:65px;bottom:0;border-radius:18px;background:linear-gradient(145deg,#efa1ba,#f8bfd1);box-shadow:0 28px 55px #702b461f}
+.front{position:absolute;left:0;right:0;top:65px;bottom:0;background:#efa7bd;clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%);border-radius:18px;z-index:4;pointer-events:none}
+.flap{position:absolute;left:0;right:0;top:65px;height:205px;background:linear-gradient(145deg,#fac0d3,#e995b2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:6}
+.letterbox{position:absolute;left:5%;width:90%;top:92px;height:365px;background:#fffafc;border-radius:12px;z-index:3;box-shadow:0 8px 25px #65304420;transition:transform .9s ease;overflow:hidden}
+.scroll{height:100%;overflow:auto;padding:28px}
+.envelope.open .flap{transform:rotateX(180deg);z-index:2}
+.envelope.open .letterbox{transform:translateY(-235px);z-index:8}
+.seal{position:absolute;z-index:10;left:50%;bottom:22px;transform:translateX(-50%);width:78px;height:78px;border:0;border-radius:50%;cursor:pointer;color:white;background:radial-gradient(circle at 35% 30%,#c65379,#852c4e);font-size:32px;box-shadow:0 8px 18px #5d243945}
+.envelope.open .seal{opacity:0;pointer-events:none}
+.recipient{text-align:center;font:bold 30px Georgia,serif;color:#8b3c5d;margin-bottom:18px}
+.message{font:600 19px/1.55 Georgia,serif}
+.signature{text-align:right;margin-top:20px;font:italic 23px Georgia,serif;color:#8b3c5d}
+.quote{text-align:center;font-style:italic;font-size:21px}
+
+/* TARJETAS */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:25px 0 55px}
+.card{background:#ffffffc9;border:1px solid #e4abc1;border-radius:22px;padding:22px;box-shadow:0 12px 35px #7d315014;backdrop-filter:blur(7px)}
+.card h2{font-size:29px;color:#813452;margin:0 0 12px}
+.timer{text-align:center;font-size:clamp(18px,4vw,30px);font-weight:bold;color:#7f3452;padding:12px 0}
+.note{text-align:center;font-size:13px;color:#98657a}
+button{border:0;border-radius:999px;background:#9e3b60;color:#fff;padding:12px 18px;font-size:15px;cursor:pointer}
+button:active{transform:scale(.97)}
+.music{text-align:center}
+#player{margin-top:15px;min-height:0}
+#player iframe{width:100%;max-width:560px;aspect-ratio:16/9;border:0;border-radius:14px}
+.secret{min-height:62px;margin-top:15px;font:italic 22px/1.4 Georgia,serif;color:#7f3452}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery img{width:100%;height:125px;object-fit:cover;border-radius:14px;border:4px solid white}
+.gallery .featured{grid-column:span 2;grid-row:span 2;height:260px}
+.placeholder{grid-column:1/-1;text-align:center;padding:35px 10px;border:2px dashed #d99ab3;border-radius:16px;font:20px Georgia,serif}
+.flower{padding:18px;border:8px solid #efb1c7;border-radius:20px;position:relative}
+.flower:before,.flower:after{content:"🌸 🌿 🌷 🌿 🌸";position:absolute;left:10px;right:10px;text-align:center;font-size:20px;letter-spacing:4px}
+.flower:before{top:-22px}.flower:after{bottom:-22px}
+.map{height:310px;border-radius:18px;position:relative;overflow:hidden;background:linear-gradient(25deg,transparent 45%,#ffffff88 46% 47%,transparent 48%),linear-gradient(145deg,#dbe8d8,#cfe0cf 48%,#e9e1c9);border:1px solid #d1b2bd}
+.map:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(75deg,transparent 0 42px,#fff8 43px 45px),repeating-linear-gradient(160deg,transparent 0 60px,#fff8 61px 63px)}
+.pin{position:absolute;text-decoration:none;color:#7d294b;z-index:3}
+.pin i{display:block;background:#a53c62;width:29px;height:29px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 8px #5d243955}
+.pin span{position:absolute;left:22px;top:-3px;background:#fff;padding:7px 9px;border-radius:9px;white-space:nowrap;box-shadow:0 2px 9px #5553;font-size:13px}
+.sucre{left:27%;top:53%}.corrientes{left:65%;top:65%}
+.wax{display:flex;gap:8px;flex-wrap:wrap}.wax button{background:#8d3554}
+
+@media(max-width:700px){
+header{padding-top:32px}.stage{height:500px}.envelope{height:320px}.back,.front{top:45px}.flap{top:45px;height:150px}.letterbox{top:65px;height:300px}.envelope.open .letterbox{transform:translateY(-165px)}.scroll{padding:20px 17px}.recipient{font-size:25px}.message{font-size:17px}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.gallery .featured{grid-column:span 2;height:230px}
+}
+</style>
+</head>
+<body>
+<script>
+for(let i=0;i<28;i++){const e=document.createElement("div");e.className="fall";e.textContent=["♡","♥","✦","🌸"][i%4];e.style.left=Math.random()*100+"%";e.style.animationDuration=(7+Math.random()*8)+"s";e.style.animationDelay=(-Math.random()*10)+"s";e.style.fontSize=(14+Math.random()*20)+"px";document.body.appendChild(e)}
+</script>
+
+<header>
+<h1>Medio año desde q construimos un futuro</h1>
+<p>Para mi lunita hermosa 💗</p>
+</header>
+
+<main class="wrap">
+<section class="stage">
+<div class="envelope" id="envelope">
+<div class="back"></div>
+<div class="letterbox">
+<div class="scroll">
+<div class="recipient">Para mi lunita hermosa 💗</div>
+<div class="message">
+no sabes la emoción q siento al escribir y hacer todo esto, amor mio. Ya son seis meses contigo princesita, seis meses llenos de amor, riéndonos de cosas q solo nosotras entendemos, contándonos cada cosa y siendo nosotras. Aun recuerdo los primeros dias q empezamos a hablar y me da mucha risa ya q ni la "sodapop" ni la "golden" podrían imaginar cuanto nos llegamos a amar.<br><br>
+Desde q te conozco eres el primer pensamiento q tengo al despertar y tambien el último al dormirme, por q aunque por el momento solo podemos amarnos a través de una pantalla se q lo q sentimos va mas allá de todo, lo q formamos en estos seis meses son el amor mar puro y sincero, donde ambas mejoramos y demostramos q podemos enfrentar cualquier problema q tengamos en la relación para no perdernos y seguir construyendo un nosotros. Se q pasaron muchas cosas, muchas cosas q nos alejaron y se q son por culpa mia, y perdoname por todo, por no ser lo suficientemente buena para ti, por no estar en los momentos q mas los necesitas, perdoname por todos los errores q tuve, y se q con un perdon no se solucionan las cosas, ya q con palabras no se demuestran las cosas sino con acciones y te las voy a demostrar, por q yo te amo con todo mi corazón mi amor, y siempre lo hare.<br><br>
+<strong>Felices seis meses, amor mío. 🤍</strong><br><br>
+<div class="quote">"Eres mi mas dulce melodía, mi sueño, mi poesía. Eres la risa en mi rutina, mi mejor historia y mi alegría."</div>
+</div>
+<div class="signature">Con todo el amor de fernandaa</div>
+</div>
+</div>
+<div class="flap"></div>
+<div class="front"></div>
+<button class="seal" id="seal" aria-label="Abrir carta">♥</button>
+</div>
+</section>
+
+<section class="grid">
+<div class="card">
+<h2>⏳ Nuestro tiempo</h2>
+<div class="timer" id="timer">000 días · 00 h · 00 min · 00 s</div>
+<div class="note">Desde el 30 de marzo de 2026</div>
+</div>
+
+<div class="card">
+<h2>🎵 Nuestra canción</h2>
+<div class="music">
+<button id="playMusic">▶ Empezar desde 0:40</button>
+<button id="pauseMusic" style="display:none">⏸ Pausar</button>
+<div id="player"></div>
+</div>
+<div class="note">La gloria eres tú · empieza desde 0:40</div>
+</div>
+
+<div class="card">
+<h2>💌 Poema secreto</h2>
+<button id="reveal">Revelar mi secreto ✨</button>
+<div class="secret" id="secret">Hay algo que quiero que leas cuando estés lista...</div>
+</div>
+
+<div class="card">
+<h2>📸 Nuestros recuerdos</h2>
+<div class="flower">
+<div class="gallery" id="gallery">
+<div class="placeholder">Aquí irán nuestras fotos más preciadas ♡</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📍 Lugares que nos unen</h2>
+<div class="map">
+<a class="pin sucre" href="https://www.google.com/maps/search/?api=1&query=Sucre%2C%20Bolivia" target="_blank" rel="noopener"><i></i><span>Sucre, Bolivia</span></a>
+<a class="pin corrientes" href="https://www.google.com/maps/search/?api=1&query=Corrientes%2C%20Argentina" target="_blank" rel="noopener"><i></i><span>Corrientes, Argentina</span></a>
+</div>
+<p class="note">Toca cada recuerdo para abrir Google Maps.</p>
+</div>
+
+<div class="card">
+<h2>💗 Sello de cera</h2>
+<div class="wax">
+<button data-wax="♥">♥</button><button data-wax="∞">∞</button><button data-wax="✦">✦</button><button data-wax="❦">❦</button>
+</div>
+<p class="note">Elige un sello para el sobre.</p>
+</div>
+</section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+const envelope=document.getElementById("envelope");
+document.getElementById("seal").addEventListener("click",e=>{e.stopPropagation();envelope.classList.add("open")});
+
+const start=new Date("2026-03-30T00:00:00");
+function updateTimer(){
+ let total=Math.max(0,Math.floor((Date.now()-start.getTime())/1000));
+ const days=Math.floor(total/86400); total%=86400;
+ const hours=Math.floor(total/3600); total%=3600;
+ const mins=Math.floor(total/60); const secs=total%60;
+ document.getElementById("timer").textContent=
+ String(days).padStart(3,"0")+" días · "+String(hours).padStart(2,"0")+" h · "+String(mins).padStart(2,"0")+" min · "+String(secs).padStart(2,"0")+" s";
+}
+updateTimer();setInterval(updateTimer,1000);
+
+document.getElementById("reveal").addEventListener("click",()=>{
+ document.getElementById("secret").textContent="Y simplemente puedo decir q eres lo mas bonito q he visto en toda mi vida:333";
+ document.getElementById("reveal").textContent="💗 Ya puedes leerlo";
+});
+
+document.querySelectorAll("[data-wax]").forEach(btn=>{
+ btn.addEventListener("click",()=>document.getElementById("seal").textContent=btn.dataset.wax);
+});
+
+let playerFrame=null;
+document.getElementById("playMusic").addEventListener("click",()=>{
+ if(!playerFrame){
+  playerFrame=document.createElement("iframe");
+  playerFrame.src="https://www.youtube.com/embed/ekIBjKNQN5I?start=40&rel=0";
+  playerFrame.title="La gloria eres tú";
+  playerFrame.allow="autoplay; encrypted-media; picture-in-picture";
+  playerFrame.allowFullscreen=true;
+  document.getElementById("player").appendChild(playerFrame);
+ }else{
+  playerFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}',"*");
+ }
+ document.getElementById("playMusic").style.display="none";
+ document.getElementById("pauseMusic").style.display="inline-block";
+});
+document.getElementById("pauseMusic").addEventListener("click",()=>{
+ if(playerFrame) playerFrame.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}',"*");
+ document.getElementById("pauseMusic").style.display="none";
+ document.getElementById("playMusic").style.display="inline-block";
+});
+});
+</script>
+</body>
+</html>
